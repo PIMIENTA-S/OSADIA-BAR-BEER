@@ -1,0 +1,40 @@
+<div class="mt-5 mx-auto">
+    <form (submit)="edit ? updateMovie() : submitMovie()" class="bg-gray-200 my-20 mx-20 shadow-md rounded px-8 pt-6 pb-8 mb-4 dark:bg-slate-800">
+        <div class="place-content-center">
+            <label class="block text-sm font-medium leading-6" for="title">Título</label>
+            <div class="mt-1 mb-4">
+                <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                  <input [(ngModel)]="movie.title" type="text" name="title" id="time" class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-black placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="Título">
+                </div>
+            </div>
+            <label class="font-semibold" for="title">Descripción</label>
+            <div class="mt-1 mb-4">
+                <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                  <input [(ngModel)]="movie.description" type="text" name="description" id="description" class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-black placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="Descripción">
+                </div>
+            </div>
+            <label class="font-semibold" for="title">Productor</label>
+            <div class="mt-1 mb-4">
+                <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                  <input [(ngModel)]="movie.producer" type="text" name="producer" id="producer" class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-black placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="Productor">
+                </div>
+            </div>
+            <label class="font-semibold" for="title">Duración</label>
+            <div class="mt-1 mb-4">
+                <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                  <input [(ngModel)]="movie.time" type="text" name="time" id="time" class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-black placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="Duración">
+                </div>
+            </div>
+            <label class="font-semibold" for="title">URL de la imagen</label>
+            <div class="mt-1 mb-4">
+                <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                  <input [(ngModel)]="movie.image" type="text" name="imageUrl" id="imageUrl" class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-black placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="URL de la imagen">
+                </div>
+            </div>
+            <div class="my-1">
+                <button class="p-2 bg-neutral-500 rounded-md px-4 text-white">Enviar</button>
+            </div>
+        </div>
+    </form>
+    
+</div>
