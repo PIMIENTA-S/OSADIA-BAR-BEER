@@ -13,10 +13,6 @@ export class MoviesService {
         return this.movieModel.find().exec();
     };
 
-    // async findOne(id:string){
-    //     return this.movieModel.findById(id).exec();
-    // }
-
     async findOne(id: string) {
         if (!id || id.trim() === '' || !Types.ObjectId.isValid(id)) {
             throw new BadRequestException('ID inválido');
@@ -27,23 +23,12 @@ export class MoviesService {
         }
         return movie;
     }
-    
 
-    // async create(createMovieDTO: CreateMovieDTO){
-    //     const movie = new this.movieModel(createMovieDTO);
-    //     return movie.save();
-    // }
-
-
-    async create(createMovieDTO: CreateMovieDTO) {
-        try {
-            const movie = new this.movieModel(createMovieDTO);
-            return await movie.save();
-        } catch (error) {
-            console.error('Error al guardar película:', error); // ✅ Depuración
-            throw new BadRequestException('No se pudo guardar la película');
-        }
+    async create(createMovieDTO: CreateMovieDTO): Promise<Movie> {
+        const movie = new this.movieModel(createMovieDTO);
+        return movie.save();
     }
+    
     
 
     async update(id: string, createMovieDTO:CreateMovieDTO){

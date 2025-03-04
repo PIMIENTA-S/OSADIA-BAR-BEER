@@ -1,4 +1,4 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Schema, Prop, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
 @Schema()
@@ -6,16 +6,16 @@ export class Movie extends Document {
     @Prop({ required: true })
     title: string;
 
-    @Prop({required: true})
+    @Prop()
     description: string;
 
-    @Prop({required: true})
+    @Prop()
     producer: string;
 
-    @Prop({required: true})
-    time: string;
+    @Prop()
+    time: number;
 
-    @Prop({required: true})
+    @Prop()
     image: string;
 }
 
