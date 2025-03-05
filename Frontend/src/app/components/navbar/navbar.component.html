@@ -1,18 +1,22 @@
-<nav class="bg-black">
-    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div class="relative flex h-16 items-center justify-between">
-            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                <div class="flex flex-shrink-0 items-center">
-                <img class="h-8 w-auto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Logonetflix.png/1200px-Logonetflix.png" alt="Your Company">
-                </div>
-                <div class="hidden sm:ml-6 sm:block">
-                <div class="flex space-x-4">
-                    <a routerLink="/" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Home</a>
-                    <a routerLink="/movies/create" routerLinkActive="router-link-active"  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Create</a>
-                    <a routerLink="/movies" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">All movies</a>
-                </div>
-                </div>
-            </div>
-        </div>
+<div class="flex h-screen bg-black text-white">
+    <!-- Sidebar -->
+    <nav class="w-72 bg-gray-900 p-5 flex flex-col fixed h-full nav">
+      <div class="mb-8 text-center">
+        <img src="https://github.com/user-attachments/assets/01676c11-0ef2-49e4-ae7a-7da021df66c7" alt="Logo" class="mx-auto h-32 m-5">
+      </div>
+      <ul class="space-y-4 text-lg">
+        <li><a routerLink="/" class="block py-2 px-4 rounded-md hover:bg-gray-700">Inicio</a></li>
+        <li><a routerLink="/movies/create" class="block py-2 px-4 rounded-md hover:bg-gray-700">Añadir Producto</a></li>
+        <li><a routerLink="/pedidos" class="block py-2 px-4 rounded-md hover:bg-gray-700">Pedidos</a></li>
+        <li><a routerLink="/reports" class="block py-2 px-4 rounded-md hover:bg-gray-700">Reportes</a></li>
+        <li><a routerLink="/providers" class="block py-2 px-4 rounded-md hover:bg-gray-700">Proveedores</a></li>
+        <li><a routerLink="/settings" class="block py-2 px-4 rounded-md hover:bg-gray-700">Configuración</a></li>
+      </ul>
+    </nav>
+  
+    <!-- Content -->
+    <div class="ml-64 p-8 w-full overflow-auto">
+      <router-outlet></router-outlet>
     </div>
-</nav>
+  </div>
+  

@@ -1,0 +1,41 @@
+<div class="flex justify-center items-center min-h-screen bg-gray-100 dark:bg-gray-900">
+  <div class="w-full max-w-lg bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 animate-fade-in">
+    <h2 class="text-2xl font-bold text-gray-700 dark:text-gray-200 text-center mb-4">Editar Producto</h2>
+    <form (submit)="updateMovie()" class="space-y-4">
+      
+      <div>
+        <label class="block text-gray-700 dark:text-gray-300 font-medium">Nombre</label>
+        <input [(ngModel)]="movie.title" type="text" name="title" class="w-full p-2 text-black border rounded focus:ring focus:ring-indigo-300">
+      </div>
+
+      <div>
+        <label class="block text-gray-700 dark:text-gray-300 font-medium">Tipo</label>
+        <select [(ngModel)]="movie.description" name="description" class="w-full p-2 border text-black rounded focus:ring focus:ring-indigo-300">
+          <option value="Vino">Vino</option>
+          <option value="Cerveza">Cerveza</option>
+          <option value="Destilados">Destilados</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-gray-700 dark:text-gray-300 font-medium">Stock</label>
+        <input [(ngModel)]="movie.producer" type="number" name="producer" class="w-full p-2 border text-black rounded focus:ring focus:ring-indigo-300">
+      </div>
+
+      <div>
+        <label class="block text-gray-700 dark:text-gray-300 font-medium">Precio</label>
+        <input [(ngModel)]="movie.time" type="number" name="time" class="w-full p-2 border text-black rounded focus:ring focus:ring-indigo-300">
+      </div>
+
+      <div>
+        <label class="block text-gray-700 dark:text-gray-300 font-medium">URL de la imagen</label>
+        <input [(ngModel)]="movie.image" type="text" name="image" class="w-full p-2 border text-black rounded focus:ring focus:ring-indigo-300">
+      </div>
+
+      <div class="flex justify-center">
+        <button class="bg-indigo-500 text-white px-6 py-2 rounded-lg hover:bg-indigo-600 transition">Guardar</button>
+      </div>
+
+    </form>
+  </div>
+</div>

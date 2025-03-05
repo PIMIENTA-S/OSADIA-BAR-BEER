@@ -1,0 +1,51 @@
+<div class="container mx-auto mt-5 p-5 bg-gray-900 text-white rounded-lg shadow-lg">
+  <div class="flex justify-between items-center mb-4">
+      <h2 class="text-2xl font-bold text-gold-500">Lista de Proveedores</h2>
+      <button class="bg-green-600 hover:bg-green-800 text-white px-4 py-2 rounded" (click)="toggleForm()">
+          {{ showForm ? 'Cancelar' : 'Agregar Proveedor' }}
+      </button>
+  </div>
+
+  <!-- Formulario para agregar proveedor -->
+  <div *ngIf="showForm" class="mb-4 p-4 bg-gray-800 rounded-lg text-black m-3">
+      <input type="text" [(ngModel)]="newProvider.name" placeholder="Nombre" class="outline-none py-1 px-4 mx-2 rounded-sm input-style ">
+      <input type="text" [(ngModel)]="newProvider.contact" placeholder="Contacto" class="outline-none py-1 px-4 mx-2 rounded-sm input-style">
+      <input type="text" [(ngModel)]="newProvider.phone" placeholder="Teléfono" class="outline-none py-1 px-4 mx-2 rounded-sm input-style">
+      <input type="text" [(ngModel)]="newProducts" placeholder="Productos (separados por comas)" class="w outline-none py-1 px-4 mx-2 rounded-sm input-style">
+      
+      <button class="bg-blue-600 hover:bg-blue-800 text-white px-4 py-2 rounded mt-2" (click)="addProvider()">
+          Guardar Proveedor
+      </button>
+  </div>
+
+  <div class="overflow-x-auto">
+      <table class="table-auto w-full border-collapse">
+          <thead>
+              <tr class="bg-gold-700 text-black">
+                  <th class="px-4 py-2">Nombre</th>
+                  <th class="px-4 py-2">Contacto</th>
+                  <th class="px-4 py-2">Teléfono</th>
+                  <th class="px-4 py-2">Productos</th>
+                  <th class="px-4 py-2">Acciones</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let provider of providers" class="hover:bg-gray-800 transition">
+                  <td class="border px-4 py-2">{{ provider.name }}</td>
+                  <td class="border px-4 py-2">{{ provider.contact }}</td>
+                  <td class="border px-4 py-2">{{ provider.phone }}</td>
+                  <td class="border px-4 py-2">
+                      <span *ngFor="let product of provider.products" class="bg-gold-500 text-black px-2 py-1 rounded mr-1">
+                          {{ product }}
+                      </span>
+                  </td>
+                  <td class="border px-4 py-2 text-center">
+                      <button class="bg-red-600 hover:bg-red-800 text-white px-3 py-1 rounded" (click)="deleteProvider(provider._id!)">
+                          Eliminar
+                      </button>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>

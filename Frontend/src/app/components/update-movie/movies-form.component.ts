@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { Movie } from '../../interfaces/movie';
 import { MoviesService } from '../../services/movies.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-movies-form',
@@ -17,8 +18,8 @@ export class MoviesFormComponent {
     _id: '',
     title: '',
     description: '',
-    producer: '',
-    time: '',
+    producer: 0,
+    time: 0,
     image: ''
   }
 
@@ -42,22 +43,13 @@ export class MoviesFormComponent {
     }
   }
 
-  submitMovie(){
-    this.moviesService.createMovie(this.movie).subscribe(
-        res => {
-          console.log(res);
-          this.router.navigate(['/']);
-      },
-      err => console.log(err)
-    )
-  }
 
   updateMovie(){
-    this.moviesService.updateMovie(this.movie._id, this.movie)
+    this.moviesService.updateMovie(this.movie._id!, this.movie)
     .subscribe(
         res => {
-          console.log(res);
-          this.router.navigate(['/'])
+          swal.fire('Añadido exitosamente', '', 'success')
+          this.router.navigate(['/pedidos'])
         },
         err => console.log(err)
     )
