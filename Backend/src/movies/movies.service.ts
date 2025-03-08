@@ -28,8 +28,6 @@ export class MoviesService {
         const movie = new this.movieModel(createMovieDTO);
         return movie.save();
     }
-    
-    
 
     async update(id: string, createMovieDTO:CreateMovieDTO){
         return this.movieModel.findByIdAndUpdate(id, createMovieDTO, { new:true }).exec();

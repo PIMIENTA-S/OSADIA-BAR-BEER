@@ -3,10 +3,8 @@ import { MoviesService } from './movies.service';
 import { CreateMovieDTO } from './movie.dto';
 import { Types } from 'mongoose';
 
-
 @Controller('movies')
 export class MoviesController {
-
     constructor(private readonly moviesService: MoviesService){}
 
     @Get()

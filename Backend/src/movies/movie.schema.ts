@@ -10,7 +10,7 @@ export class Movie extends Document {
     description: string;
 
     @Prop()
-    producer: string;
+    producer: number;
 
     @Prop()
     time: number;
